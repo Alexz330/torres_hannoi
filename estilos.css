@@ -1,0 +1,72 @@
+body{
+    background-color: #232741;
+    background-image: url('https://media.tenor.com/images/7e96d994f29b388f63f7aa77ff2bea78/tenor.gif');
+    background-repeat: no-repeat;
+    background-position: 50%, 50%;
+    background-size: 20%;
+
+}
+
+
+.contenedor {
+   
+    display: flex;
+    width: 600px;
+    height:40px;
+    color: #fff;
+    font-size: 45px;
+
+    line-height: 40px;
+    
+    
+    position: relative;
+    top: 100px;
+    right: 0;
+    bottom: 0px;
+    left: 0;
+    margin: 100px 0px 0px 0px;
+    
+    overflow: hidden;
+    z-index: 2;
+    min-width: 100px;
+    }
+    
+    .ul {
+     list-style: none;
+     padding-left: 10px;
+     animation: cambiar 7s infinite;
+     
+    }
+    
+    .ul, p {
+     margin: 2px;
+    }
+ 
+ @keyframes  cambiar {
+  
+  0%{ margin-top: 0;}
+   20%{ margin-top: 0;}
+   
+   25% { margin-top: -40PX;}
+   50% { margin-top: -40PX;}
+   
+   55% { margin-top: -80PX;}
+   80% { margin-top: -80PX;}
+   
+   85% { margin-top: -40PX;}
+   95% { margin-top: -40PX;}
+   
+  100% { margin-top: 0;}
+  
+ }
+
+ #particles-js{
+     width: 100%;
+     height: 300px;
+ }
+
+ #particles-js{
+     height: 100vh;
+     width: 100%;
+     z-index: 1;
+ }

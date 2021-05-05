@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link href="assets/css/style.css" rel="stylesheet">
+		<link rel="stylesheet" href="estilos.css">
+		
+		<!-- Vendor CSS Files -->
+		
+		<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+		<link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+		<link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+		<link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Proyecto</title>
+	</head>
+	<style>
+		body {
+			padding: 50px;
+			padding-left: 127px;
+		}
+
+		#torre1,
+		#torre2,
+		#torre3 {
+			display: inline-block;
+			background:grey;
+			height: 222px;
+			width: 20px;
+			margin-right: 300px;
+		}
+
+		span {
+			display: inline-block;
+			left: 0;
+			transition: transform 0.2s ease-in-out;
+		}
+
+        #torre3{
+            margin-right: 0;
+        }
+	</style>
+	<body style="background-color: #232741;">
+	
+		
+			<div id="particles-js">
+				<div id="torre1"></div>
+				<div id="torre2"></div>
+				<div id="torre3"></div>
+			
+			
+			<div class="contenedor">
+				<p>i'm</p>
+				<ul class="ul">
+					<li class="li">Alexis Lopez</li>
+					<li class="li">Freelancer</li>
+					<li class="li">Future Enginner</li>
+				</ul>
+		 
+			</div>
+		
+
+		</div>
+		<script>
+			// COLORES Y NUMEROS DE DISCOS
+			const discosPrompt = prompt('Ingresar numero de discos')
+			const discosNumero = +discosPrompt
+			const colores = ['#F44336', '#E91E63', '#9C27B0', '#3F51B5', '#2196F3', '#4CAF50', '#FFC107']
+
+			// PILA PERO DE ELEMENTOS
+			let discos = []
+
+			// PILAS
+			const pilaCopia = []
+			let pila = [] // pila inicial
+			let pilaFinal = [] // final
+			let pilaAuxiliar = [] // auxiliar
+
+			// VARIABLES GLOBALES
+			let discoActual = 0
+			let estaEnTorre1 = true
+			let estaEnTorre2 = false
+			let estaEnTorre3 = false
+
+			// ELEMENTOS DE TORRES
+			const torre1 = document.getElementById('torre1')
+			const torre2 = document.getElementById('torre2')
+			const torre3 = document.getElementById('torre3')
+
+			for (let i = 0; i < discosNumero; i++) {
+				// ESTILOS
+				const disco = document.createElement('span')
+				disco.style.background = colores[i]
+				disco.style.height = '30px'
+				disco.style.width = `${30 * (i + 1)}px`
+				disco.style.position = 'absolute'
+				disco.style.transform = `translateX(120px)`
+				disco.style.marginLeft = `-${15 * i}px`
+				disco.style.top = `${250 - discosNumero * 30 + 30 * (i + 1)}px`
+
+				// SELECCIONAR DISCO ACTUAL
+				disco.addEventListener('click', () => (discoActual = i))
+
+				// PILAS INICIALES
+				pila.push(discosNumero - 1 - i)
+				pilaCopia.push(discosNumero - 1 - i)
+
+				// AGREGAR ELEMENTOS
+				document.body.appendChild(disco)
+				discos.push(disco)
+			}
+
+			const validarTorre = numeroDeTorre => {
+				// OBTENER PILA ACTUAL
+				let pilaTemporal = pila
+				if (numeroDeTorre === 0) pilaTemporal = pila
+				else if (numeroDeTorre === 1) pilaTemporal = pilaAuxiliar
+				else if (numeroDeTorre === 2) pilaTemporal = pilaFinal
+
+				// ULTIMO DISCO
+				let ultimoDisco =
+					pilaTemporal[pilaTemporal.length - 1] === 0
+						? 0
+						: pilaTemporal[pilaTemporal.length - 1] || 7
+
+				// VALIDAR
+				if (ultimoDisco > discoActual) {
+					// OBTENER TORRE
+					estaEnTorre1 = pila.includes(discoActual)
+					estaEnTorre2 = pilaAuxiliar.includes(discoActual)
+					estaEnTorre3 = pilaFinal.includes(discoActual)
+
+					// APILAR
+					if (numeroDeTorre === 0) pila.push(discoActual)
+					else if (numeroDeTorre === 1) pilaAuxiliar.push(discoActual)
+					else if (numeroDeTorre === 2) pilaFinal.push(discoActual)
+
+					// DESAPILAR
+					if (estaEnTorre1) pila.pop()
+					else if (estaEnTorre2) pilaAuxiliar.pop()
+					else if (estaEnTorre3) pilaFinal.pop()
+
+					// POSICION FINAL DE DISCO
+					discos[discoActual].style.transform = `translateX(${130 + 324 * numeroDeTorre}px)`
+					discos[discoActual].style.top = `${40 + 30 * (7 - pilaTemporal.length + 1)}px`
+
+					// MENSAJE DE GANAR
+					if (pilaCopia.join(',') === pilaFinal.join(','))
+						setTimeout(() => alert('Ya ganaste perro'), 1000)
+				} else alert('Movimiento invalido')
+			}
+
+			// EVENTOS DE CLICK EN TORRES
+			torre1.addEventListener('click', () => validarTorre(0))
+			torre2.addEventListener('click', () => validarTorre(1))
+			torre3.addEventListener('click', () => validarTorre(2))
+		</script>
+		<script src="assets/js/particles.min.js"></script>
+  	  <script src="assets/js/app.js"></script>
+
+	</body>
+	  
+</body>
+</html>	
