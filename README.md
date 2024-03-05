@@ -140,26 +140,38 @@ Junto a esta politica, se debe poner la politica general del bucket, para usuari
 
 
 ## Aplicacion 
+### ---> Pantalla de Carga Inicial 
 
 ![image](https://github.com/Alexz330/torres_hannoi/assets/72354711/0e9cf0b1-faf8-4004-b613-cf15b76cb416)
 
+### ---> Pantalla de Login
 
 ![image](https://github.com/Alexz330/torres_hannoi/assets/72354711/247fa388-8c78-4547-82db-209e793d0389)
 
+### ---> Pantalla de Registro
 
 ![image](https://github.com/Alexz330/torres_hannoi/assets/72354711/f86e9aaa-1906-4e55-83c7-47609a49a630)
+
+### ---> Pantalla de Perfil
 
 
 ![image](https://github.com/Alexz330/torres_hannoi/assets/72354711/af3d228e-47e2-4df1-977d-be89651339bd)
 
+### ---> Pantalla de Visualización de Álbumes
+
 
 ![image](https://github.com/Alexz330/torres_hannoi/assets/72354711/23fac61c-0583-4afa-9eea-75ea2e736126)
+
+### ---> Pantalla de Modificación de Álbum
 
 
 ![image](https://github.com/Alexz330/torres_hannoi/assets/72354711/9ff2f451-145e-482d-83d3-2da7bb2702f0)
 
+### ---> Pantalla de Modificación de Perfil 
+
 
 ![image](https://github.com/Alexz330/torres_hannoi/assets/72354711/4f90e981-ffd8-4ce8-8265-25f94c8595bb)
 
+### ---> Pantalla de Carga de fotos
 
 ![image](https://github.com/Alexz330/torres_hannoi/assets/72354711/88ef99ab-2a36-4697-a55f-740cc5503468)
