@@ -124,14 +124,17 @@ Junto a esta politica, se debe poner la politica general del bucket, para usuari
 ## Capturas de pantalla
 
 --->S3
+
 ![image](https://github.com/Alexz330/torres_hannoi/assets/72354711/0f3d5fbd-05b0-4c31-bb4f-00f49a5067bc)
 
 
 ![image](https://github.com/Alexz330/torres_hannoi/assets/72354711/e417092e-f7cd-4059-a4a3-a569868795e8)
 
 ---> RDS
+
 ![image](https://github.com/Alexz330/torres_hannoi/assets/72354711/889bf5ba-615f-47f0-a4a5-860300622e64)
 
 ---> Web
+
 ![image](https://github.com/Alexz330/torres_hannoi/assets/72354711/b0b2873c-d604-4666-bab9-1ce68dda9b4c)
 
